@@ -6,11 +6,20 @@
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        Dim FILE_NAME As String = txtxFolder.Text & "\ " & Trim(txtFileName.Text) & ".txt"
+        If Len(Trim(txtFileName.Text)) = 0 Then
+            MsgBox("Please provide AddressOf filename", vbInformation)
+            Exit Sub
+        End If
+        Dim FILE_NAME As String = Trim(txtFileName.Text)
 startwriting:
         If System.IO.File.Exists(FILE_NAME) = True Then
-            My.Computer.FileSystem.WriteAllText(FILE_NAME, txtContent.Text & vbCrLf, True)
+            Dim objWriter As New System.IO.StreamWriter(FILE_NAME)
+            objWriter.Write(txtContent.Text)
             MsgBox("Content saved", MsgBoxStyle.OkOnly + vbInformation, "File Save")
+            txtFileName.Text = ""
+            txtContent.Text = ""
+            objWriter.Close()
+
         Else
             System.IO.File.Create(FILE_NAME).Dispose()
             GoTo startwriting
@@ -19,6 +28,14 @@ startwriting:
 
     Private Sub BtnClose_Click(sender As Object, e As EventArgs) Handles BtnClose.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnFileName.Click
+        OpenFileDiag.InitialDirectory = FolderDiag.SelectedPath
+        If OpenFileDiag.ShowDialog() = DialogResult.OK Then
+            txtFileName.Text = OpenFileDiag.FileName
+            txtContent.Text = My.Computer.FileSystem.ReadAllText(txtFileName.Text)
+        End If
     End Sub
 End Class
 
