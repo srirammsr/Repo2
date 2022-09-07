@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PrjSave2Text.FrmSavetoTextFile
+            Me.MainForm = Global.PrjSave2Text.frmBase
         End Sub
     End Class
 End Namespace
