@@ -99,7 +99,7 @@ Partial Class FrmSavetoTextFile
         '
         'BtnClose
         '
-        Me.BtnClose.Location = New System.Drawing.Point(531, 337)
+        Me.BtnClose.Location = New System.Drawing.Point(531, 331)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(76, 29)
         Me.BtnClose.TabIndex = 4
@@ -149,7 +149,8 @@ Partial Class FrmSavetoTextFile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(634, 427)
+        Me.AutoSize = True
+        Me.ClientSize = New System.Drawing.Size(634, 377)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnFileName)
         Me.Controls.Add(Me.Panel1)
@@ -162,7 +163,9 @@ Partial Class FrmSavetoTextFile
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtFileName)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "FrmSavetoTextFile"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Save to text file"
         Me.ResumeLayout(False)
         Me.PerformLayout()

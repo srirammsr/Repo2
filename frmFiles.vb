@@ -36,5 +36,9 @@ startwriting:
             txtContent.Text = System.IO.Path.GetFileNameWithoutExtension(Trim(txtxFolder.Text) & txtFileName.Text)
         End If
     End Sub
+
+    Private Sub FrmSavetoTextFile_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
 
