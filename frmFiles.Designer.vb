@@ -35,6 +35,7 @@ Partial Class FrmSavetoTextFile
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnFileName = New System.Windows.Forms.Button()
         Me.OpenFileDiag = New System.Windows.Forms.OpenFileDialog()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -50,7 +51,7 @@ Partial Class FrmSavetoTextFile
         '
         Me.txtFileName.Location = New System.Drawing.Point(191, 48)
         Me.txtFileName.Name = "txtFileName"
-        Me.txtFileName.Size = New System.Drawing.Size(369, 23)
+        Me.txtFileName.Size = New System.Drawing.Size(170, 23)
         Me.txtFileName.TabIndex = 1
         '
         'Label2
@@ -135,11 +136,21 @@ Partial Class FrmSavetoTextFile
         Me.OpenFileDiag.DefaultExt = "txt"
         Me.OpenFileDiag.FileName = "OpenFileDiag"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(376, 50)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 15)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "text files only"
+        '
         'FrmSavetoTextFile
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(634, 427)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnFileName)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btnOpenFolder)
@@ -171,4 +182,5 @@ Partial Class FrmSavetoTextFile
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnFileName As Button
     Friend WithEvents OpenFileDiag As OpenFileDialog
+    Friend WithEvents Label4 As Label
 End Class

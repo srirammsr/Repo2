@@ -42,7 +42,7 @@ Partial Class frmBase
         Me.MainToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OpenFileToolStripMenuItem})
         Me.MainToolStripMenuItem.Name = "MainToolStripMenuItem"
         Me.MainToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
-        Me.MainToolStripMenuItem.Text = "main"
+        Me.MainToolStripMenuItem.Text = "Tasks"
         '
         'OpenFileToolStripMenuItem
         '

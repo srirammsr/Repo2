@@ -10,7 +10,7 @@
             MsgBox("Please provide AddressOf filename", vbInformation)
             Exit Sub
         End If
-        Dim FILE_NAME As String = Trim(txtxFolder.Text) & "\" & Trim(txtFileName.Text)
+        Dim FILE_NAME As String = Trim(txtxFolder.Text) & "\" & Trim(txtFileName.Text) & ".txt"
 startwriting:
         If System.IO.File.Exists(FILE_NAME) = True Then
             Dim objWriter As New System.IO.StreamWriter(FILE_NAME)
@@ -33,7 +33,7 @@ startwriting:
         OpenFileDiag.InitialDirectory = FolderDiag.SelectedPath
         If OpenFileDiag.ShowDialog() = DialogResult.OK Then
             txtFileName.Text = OpenFileDiag.SafeFileName
-            txtContent.Text = My.Computer.FileSystem.ReadAllText(txtFileName.Text)
+            txtContent.Text = System.IO.Path.GetFileNameWithoutExtension(Trim(txtxFolder.Text) & txtFileName.Text)
         End If
     End Sub
 End Class
